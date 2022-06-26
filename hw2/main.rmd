@@ -1,0 +1,159 @@
+---
+title: "Tarea 2"
+subtitle: "Modelaje Matemático"
+author: "Jhonny Lanzuisi"
+date: "16 de Junio de 2022"
+fontsize: 10pt
+lang: es-ES
+documentclass: scrartcl
+classoption: twocolumn,DIV=18,toc=flat
+output:
+  pdf_document:
+    number_sections: true
+    toc: true
+    toc_depth: 3
+    fig_caption: true
+    highlight: pygments
+    latex_engine: pdflatex
+    extra_dependencies:
+      mlmodern: null
+      plex-mono: ["scale=.8"]
+    keep_tex: true
+    includes:
+      in_header: preamble.tex
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{python}
+import sympy as sym
+import numpy as np
+from scipy.integrate import solve_ivp
+import matplotlib.style
+import matplotlib.pyplot as plt
+import matplotlib
+
+matplotlib.style.use('seaborn')
+
+matplotlib.rcParams.update({
+	'figure.autolayout': True,
+})
+
+def lp(input_string):
+   print('$$' + sym.latex(input_string) + '$$')
+```
+
+# Primera pregunta
+
+Sabemos que podemos obtener $t$ de la relación:
+$$
+	\frac{R(t)}{R(0)} = e^{\lambda t}.
+$$
+
+Debemos primero determinar $\lambda$.
+Supongamos que la cantidad inicial de carbono es $1$,
+que representa el 100\%, entonces usando el hecho
+de que la vida media es $5568$ tenemos
+$$
+	N(5568) = \frac{1}{2} = 1 e^{-\lambda 5568}.
+$$
+y despejando se obtiene
+$$
+	-\frac{\log(1/2)}{5568} = \lambda.
+$$
+```{python}
+import math
+
+lmda = math.log(1/2)/5568
+print("lambda:", lmda)
+```
+
+Tenemos entonces que:
+$$
+	\frac{\log(R(t)/R(0))}{\lambda} = t
+$$
+y al sustituir los valores en una calculadora
+podemos hallar el valor de $t$:
+```{python}
+print("t:", math.log(0.97/6.68)/lmda)
+```
+
+# Segunda pregunta
+
+## (a)
+
+Los puntos de equilibrio son aquellos en que la derivada se anula,
+en este caso $x=0$ implica que $e^{-x^2} = 1$ y $\dot{x} = 0$.
+
+Para estudiar la estabilidad queremos ver como se comporta la derivada
+al variar $x$ ligeramente. Si $x$ es pequeño y positivo entonces
+la derivada es positiva pues $e^{-x^2} < 1$. Si, por otro lado,
+$x$ es pequeño y negativo entonces $e^{-x^2} > 1$ y la
+derivada es negativa.
+
+En el diagrama de fase luce entonces como la figura \ref{p1}.
+```{python}
+x = sym.symbols('x')
+
+p1 = sym.plot(sym.exp(x), (x,-1,1), show=False)
+```
+
+## (b)
+
+La derivada se hace cero cuando
+$$
+	x(a-x^2)
+$$
+se hace cero. Lo que ocurre en $x=0$ y $x=\pm\sqrt{a}$.
+
+Si $a=0$ entonces el único punto de equilibrio es el cero.
+Si hacemos $x$ pequeño y positivo entonces la derivada es negativa
+y cuando $x$ es pequeño y negativo la derivada es positiva.
+El diagrama de fase es entonces como en la figura \ref{p2},
+y el punto $x=0$ es estable.
+```{python}
+p2 = sym.plot(-x**3, (x,-1,1), show=False)
+```
+
+Si $a<0$ la raíz de $a$ no es un número real y el único
+punto de equilibrio es nuevamente el cero, con el mismo diagrama
+de la figura \ref{p2}.
+
+Si $a>0$ los puntos de equilibrio son el cero y $\pm\sqrt{a}$.
+Para el punto $\sqrt{a}$ tenemos que para $x^*>\sqrt{a}$ la derivada es negativa
+y para $x^*<\sqrt{a}$ la derivada es positiva.
+Para el punto $-\sqrt{a}$ tenemos que para $x^*>-\sqrt{a}$ la derivada es negativa
+y cuando $x^*<-\sqrt{a}$ la derivada es positiva.
+El diagrama de fase esta en la figura \ref{p3}.
+De donde se tiene que los puntos $\pm\sqrt{a}$ son estables
+y $0$ es inestable.
+```{python}
+p3 = sym.plot(show=False, legend=True)
+for i in range(0,5):
+	if i != 0:
+	    p = sym.plot(
+	        x*(i-x**2),
+	        (x,-2,2),
+	        show=False,
+	        label='a= ' + str(i)
+	    )
+	    p3.append(p[0])
+```
+
+\onecolumn
+\appendix
+# Gráficos
+
+```{r, echo=FALSE, out.width='100%', fig.cap="\\label{p1} Diagrama de fase: $\\dot{x} = 1-e^{-x^2}$"}
+knitr::include_graphics("p1.pdf")
+```
+
+```{r, echo=FALSE, out.width='100%', fig.cap="\\label{p2} Diagrama de fase: $\\dot{x} = -x^3$"}
+knitr::include_graphics("p2.pdf")
+```
+
+```{r, echo=FALSE, out.width='100%', fig.cap="\\label{p3} Diagrama de fase: $\\dot{x} = x(a-x^2)$"}
+knitr::include_graphics("p3.pdf")
+```

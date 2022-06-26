@@ -1,0 +1,519 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+  11pt,
+  spanish,
+]{scrartcl}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\hypersetup{
+  pdftitle={Primera tarea},
+  pdfauthor={Jhonny Lanzuisi},
+  pdflang={es-ES},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+\urlstyle{same} % disable monospaced font for URLs
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\newenvironment{Shaded}{}{}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{#1}}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.49,0.56,0.16}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.53,0.00,0.00}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.56,0.13,0.00}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.73,0.13,0.13}{\textit{#1}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.02,0.16,0.49}{#1}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.40,0.40,0.40}{#1}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.74,0.48,0.00}{#1}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.73,0.40,0.53}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.10,0.09,0.49}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{#1}}}}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\usepackage{mlmodern}
+\ifxetex
+  % Load polyglossia as late as possible: uses bidi with RTL langages (e.g. Hebrew, Arabic)
+  \usepackage{polyglossia}
+  \setmainlanguage[]{spanish}
+\else
+  \usepackage[shorthands=off,main=spanish]{babel}
+\fi
+
+\title{Primera tarea}
+\usepackage{etoolbox}
+\makeatletter
+\providecommand{\subtitle}[1]{% add subtitle to \maketitle
+  \apptocmd{\@title}{\par {\large #1 \par}}{}{}
+}
+\makeatother
+\subtitle{Modelaje matemático (CO4611)}
+\author{Jhonny Lanzuisi}
+\date{8 de Junio de 2022}
+
+\begin{document}
+\maketitle
+
+{
+\setcounter{tocdepth}{2}
+\tableofcontents
+}
+La configuración inicial de python: importar librerías necesarias, usar
+el estilo \texttt{seaborn} de los gráficos y el comando \texttt{lp} que
+imprime directamente en LaTeX.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ImportTok{import}\NormalTok{ sympy }\ImportTok{as}\NormalTok{ sym}
+\ImportTok{import}\NormalTok{ numpy }\ImportTok{as}\NormalTok{ np}
+\ImportTok{from}\NormalTok{ scipy.integrate }\ImportTok{import}\NormalTok{ solve\_ivp}
+\ImportTok{import}\NormalTok{ matplotlib.style}
+\ImportTok{import}\NormalTok{ matplotlib.pyplot }\ImportTok{as}\NormalTok{ plt}
+\ImportTok{import}\NormalTok{ matplotlib}
+
+\NormalTok{matplotlib.style.use(}\StringTok{\textquotesingle{}seaborn\textquotesingle{}}\NormalTok{)}
+
+\NormalTok{matplotlib.rcParams.update(\{}
+    \StringTok{\textquotesingle{}figure.autolayout\textquotesingle{}}\NormalTok{: }\VariableTok{True}\NormalTok{,}
+\NormalTok{\})}
+
+\KeywordTok{def}\NormalTok{ lp(input\_string):}
+   \BuiltInTok{print}\NormalTok{(}\StringTok{\textquotesingle{}$$\textquotesingle{}} \OperatorTok{+}\NormalTok{ sym.latex(input\_string) }\OperatorTok{+} \StringTok{\textquotesingle{}$$\textquotesingle{}}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{a}{%
+\section{1.a)}\label{a}}
+
+Como es una ecuación de primer orden podemos hallar la solución con el
+factor integrante: \[
+    \exp\left(\int \frac{2t}{1+t^2} \,dt\right).
+\]
+
+Usaremos python (sympy) para sacar las cuentas. La solución de la
+integral anterior es:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{p\_t, t }\OperatorTok{=}\NormalTok{ sym.symbols(}\StringTok{\textquotesingle{}p\_t, t\textquotesingle{}}\NormalTok{)}
+\NormalTok{p\_t }\OperatorTok{=} \DecValTok{2}\OperatorTok{*}\NormalTok{t}\OperatorTok{/}\NormalTok{(}\DecValTok{1}\OperatorTok{+}\NormalTok{t}\OperatorTok{**}\DecValTok{2}\NormalTok{)}
+\NormalTok{int\_p\_t }\OperatorTok{=}\NormalTok{ sym.Integral(p\_t,t)}
+\NormalTok{lp(sym.Eq(int\_p\_t,int\_p\_t.doit()))}
+\end{Highlighting}
+\end{Shaded}
+
+\[\int \frac{2 t}{t^{2} + 1}\, dt = \log{\left(t^{2} + 1 \right)}\]
+
+Para obtener la solución general solo hace falta calcular la siguiente
+integral. \[
+    \int \frac{1}{t^2+1} e^{\log(t^2+1)} \,dt = \int dt = t.
+\]
+
+La solución general viene dada por: \[
+    y = \frac{C_1 + t}{t^2 + 1} .
+\]
+
+Podemos ver el gráfico de la solución en la figura \ref{p1}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{p1 }\OperatorTok{=}\NormalTok{ sym.plot(show}\OperatorTok{=}\VariableTok{False}\NormalTok{, legend}\OperatorTok{=}\VariableTok{True}\NormalTok{)}
+\ControlFlowTok{for}\NormalTok{ i }\KeywordTok{in} \BuiltInTok{range}\NormalTok{(}\OperatorTok{{-}}\DecValTok{5}\NormalTok{,}\DecValTok{6}\NormalTok{):}
+\NormalTok{    p }\OperatorTok{=}\NormalTok{ sym.plot((t}\OperatorTok{+}\NormalTok{i)}\OperatorTok{/}\NormalTok{(t}\OperatorTok{**}\DecValTok{2}\OperatorTok{+}\DecValTok{1}\NormalTok{), show}\OperatorTok{=}\VariableTok{False}\NormalTok{, label}\OperatorTok{=}\StringTok{\textquotesingle{}C\_1= \textquotesingle{}} \OperatorTok{+} \BuiltInTok{str}\NormalTok{(i))}
+\NormalTok{    p1.append(p[}\DecValTok{0}\NormalTok{])}
+
+\NormalTok{p1.save(}\StringTok{\textquotesingle{}p1.pdf\textquotesingle{}}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{figure}
+\includegraphics[width=1\linewidth]{p1} \caption{\label{p1} $y = \frac{C_1 + t}{t^2 + 1}$}\label{fig:unnamed-chunk-4}
+\end{figure}
+
+\hypertarget{b}{%
+\section{1.b)}\label{b}}
+
+En esta ecuación podemos separar variables para obtener: \[
+    \int (1-y^2)\,dy =\int x^2\,dx,
+\] de donde se sigue: \[
+    y - \frac{y^3}{3} = \frac{x^3}{3} + C_1 
+\] al multiplicar ambos lados por \(3\) \[
+    3y - y^3 = x^3 + C_2.
+\]
+
+Para hallar la solución en \((1,1/2)\) sustituimos: \[
+    2 = \frac{1}{8} + C_2
+\] de donde \(C_2 = 15/8\) y la solución particular es: \[
+    y - y^3 - x^3 = \frac{15}{8}.
+\]
+
+Podemos ver el gráfico de la solución particular en la figura \ref{p2}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{x,y }\OperatorTok{=}\NormalTok{ sym.symbols(}\StringTok{\textquotesingle{}x,y\textquotesingle{}}\NormalTok{)}
+\NormalTok{p2 }\OperatorTok{=}\NormalTok{ sym.plot\_implicit(y }\OperatorTok{{-}}\NormalTok{ y}\OperatorTok{**}\DecValTok{3} \OperatorTok{{-}}\NormalTok{ x}\OperatorTok{**}\DecValTok{3} \OperatorTok{{-}} \DecValTok{15}\OperatorTok{/}\DecValTok{8}\NormalTok{,show}\OperatorTok{=}\VariableTok{False}\NormalTok{)}
+\NormalTok{p2.save(}\StringTok{\textquotesingle{}p2.pdf\textquotesingle{}}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{figure}
+\includegraphics[width=1\linewidth]{p2} \caption{\label{p2} $y - y^3 - x^3 = \frac{15}{8}$}\label{fig:unnamed-chunk-6}
+\end{figure}
+
+En general las soluciones lucen como en la figura \ref{p3}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{p3 }\OperatorTok{=}\NormalTok{ sym.plot(show}\OperatorTok{=}\VariableTok{False}\NormalTok{)}
+\ControlFlowTok{for}\NormalTok{ i }\KeywordTok{in} \BuiltInTok{range}\NormalTok{(}\OperatorTok{{-}}\DecValTok{5}\NormalTok{,}\DecValTok{6}\NormalTok{):}
+\NormalTok{    p }\OperatorTok{=}\NormalTok{ sym.plot\_implicit(y }\OperatorTok{{-}}\NormalTok{ y}\OperatorTok{**}\DecValTok{3} \OperatorTok{{-}}\NormalTok{ x}\OperatorTok{**}\DecValTok{3} \OperatorTok{{-}}\NormalTok{ i,show}\OperatorTok{=}\VariableTok{False}\NormalTok{)}
+\NormalTok{    p3.append(p[}\DecValTok{0}\NormalTok{])}
+
+\NormalTok{p3.save(}\StringTok{\textquotesingle{}p3.pdf\textquotesingle{}}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{figure}
+\includegraphics[width=1\linewidth]{p3} \caption{\label{p3} $3y - y^3 = x^3 + C_2$}\label{fig:unnamed-chunk-8}
+\end{figure}
+
+\hypertarget{c}{%
+\section{1.c)}\label{c}}
+
+Podemos separar las variables de la ecuación para obtener: \[
+\int e^y \,dy = \int t^3 + t \,dt,
+\] de donde se sigue que \[
+e^y = \frac{t^4}{4} + \frac{t^2}{2} + C_1
+\] y la solución viene dada por: \[
+y  = \log(\frac{t^4}{4} + \frac{t^2}{2} + C_1)
+\]
+
+Para encontrar la solución particular, sustituimos: \[
+    1 = \log(\frac{1}{4} + \frac{1}{2} + C_1)
+\] de donde \(C_1 = e - \frac{3}{4}\) y la solución buscada es: \[
+y  = \log(\frac{t^4}{4} + \frac{t^2}{2} + e - \frac{3}{4})
+\]
+
+Podemos ver el gráfico de la solución en la figura \ref{p4}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{p4 }\OperatorTok{=}\NormalTok{ sym.plot(sym.log(t}\OperatorTok{**}\DecValTok{4}\OperatorTok{/}\DecValTok{4} \OperatorTok{+}\NormalTok{ t}\OperatorTok{**}\DecValTok{2}\OperatorTok{/}\DecValTok{2} \OperatorTok{+}\NormalTok{ sym.E }\OperatorTok{{-}} \DecValTok{3}\OperatorTok{/}\DecValTok{4}\NormalTok{), (t,}\OperatorTok{{-}}\DecValTok{5}\NormalTok{,}\DecValTok{5}\NormalTok{),show}\OperatorTok{=}\VariableTok{False}\NormalTok{)}
+
+\NormalTok{p4.save(}\StringTok{\textquotesingle{}p4.pdf\textquotesingle{}}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{figure}
+\includegraphics[width=1\linewidth]{p4} \caption{\label{p4} $y  = \log(\frac{t^4}{4} + \frac{t^2}{2} + e - \frac{3}{4})$}\label{fig:unnamed-chunk-10}
+\end{figure}
+
+En general las soluciones lucen así como en la figura \ref{p5}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{p5 }\OperatorTok{=}\NormalTok{ sym.plot(show}\OperatorTok{=}\VariableTok{False}\NormalTok{, legend}\OperatorTok{=}\VariableTok{True}\NormalTok{)}
+\ControlFlowTok{for}\NormalTok{ i }\KeywordTok{in} \BuiltInTok{range}\NormalTok{(}\OperatorTok{{-}}\DecValTok{5}\NormalTok{,}\DecValTok{6}\NormalTok{):}
+\NormalTok{    p }\OperatorTok{=}\NormalTok{ sym.plot(}
+\NormalTok{        sym.log(t}\OperatorTok{**}\DecValTok{4}\OperatorTok{/}\DecValTok{4} \OperatorTok{+}\NormalTok{ t}\OperatorTok{**}\DecValTok{2}\OperatorTok{/}\DecValTok{2} \OperatorTok{+}\NormalTok{ i),}
+\NormalTok{        (t,}\OperatorTok{{-}}\DecValTok{5}\NormalTok{,}\DecValTok{5}\NormalTok{),}
+\NormalTok{        show}\OperatorTok{=}\VariableTok{False}\NormalTok{,}
+\NormalTok{        label}\OperatorTok{=}\StringTok{\textquotesingle{}C\_1= \textquotesingle{}} \OperatorTok{+} \BuiltInTok{str}\NormalTok{(i)}
+\NormalTok{    )}
+\NormalTok{    p5.append(p[}\DecValTok{0}\NormalTok{])}
+
+\NormalTok{p5.save(}\StringTok{\textquotesingle{}p5.pdf\textquotesingle{}}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{figure}
+\includegraphics[width=1\linewidth]{p5} \caption{\label{p5} $y  = \log(\frac{t^4}{4} + \frac{t^2}{2} + C_1)$}\label{fig:unnamed-chunk-12}
+\end{figure}
+
+\hypertarget{section}{%
+\section{2}\label{section}}
+
+Podemos separar las variables para integrar: \[
+    \int \frac{1}{\sqrt{1-y^2}} \,dy = \int t \,dt.
+\] Calculamos la primera integral:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{lp(sym.integrate(}\DecValTok{1}\OperatorTok{/}\NormalTok{sym.sqrt(}\DecValTok{1}\OperatorTok{{-}}\NormalTok{y}\OperatorTok{**}\DecValTok{2}\NormalTok{), y))}
+\end{Highlighting}
+\end{Shaded}
+
+\[\operatorname{asin}{\left(y \right)}\]
+
+Tenemos entonces que: \[
+    \sin^{-1}(y) = \frac{t^2}{2} + C_1
+\] de donde se sigue que \[
+    y = \sin(\frac{t^2}{2} + C_1).
+\]
+
+Para la solución particular sustituimos \(y(0)=1\) \[
+    1 = \sin(C_1)
+\] de donde \(C_1 = \sin^{-1}(1) = \pi/2\).
+
+La solución buscada es \[
+    y = \sin(\frac{t^2}{2} + \frac{\pi}{2}).
+\]
+
+Podemos ver el gráfico de la solución en la figura \ref{p6}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{p6 }\OperatorTok{=}\NormalTok{ sym.plot(sym.sin(t}\OperatorTok{**}\DecValTok{2}\OperatorTok{/}\DecValTok{2} \OperatorTok{+}\NormalTok{ sym.pi}\OperatorTok{/}\DecValTok{2}\NormalTok{), (t,}\OperatorTok{{-}}\DecValTok{3}\NormalTok{,}\DecValTok{3}\NormalTok{),show}\OperatorTok{=}\VariableTok{False}\NormalTok{)}
+
+\NormalTok{p6.save(}\StringTok{\textquotesingle{}p6.pdf\textquotesingle{}}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{figure}
+\includegraphics[width=1\linewidth]{p6} \caption{\label{p6} $y = \sin(\frac{t^2}{2} + \frac{\pi}{2})$}\label{fig:unnamed-chunk-15}
+\end{figure}
+
+En general las soluciones lucen así como el la figura \ref{p7}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{p7 }\OperatorTok{=}\NormalTok{ sym.plot(show}\OperatorTok{=}\VariableTok{False}\NormalTok{, legend}\OperatorTok{=}\VariableTok{True}\NormalTok{)}
+\ControlFlowTok{for}\NormalTok{ i }\KeywordTok{in} \BuiltInTok{range}\NormalTok{(}\OperatorTok{{-}}\DecValTok{2}\NormalTok{,}\DecValTok{3}\NormalTok{):}
+\NormalTok{    p }\OperatorTok{=}\NormalTok{ sym.plot(}
+\NormalTok{        sym.sin(t}\OperatorTok{**}\DecValTok{2}\OperatorTok{/}\DecValTok{2} \OperatorTok{+}\NormalTok{ i),}
+\NormalTok{        (t,}\OperatorTok{{-}}\DecValTok{3}\NormalTok{,}\DecValTok{3}\NormalTok{),}
+\NormalTok{        show}\OperatorTok{=}\VariableTok{False}\NormalTok{,}
+\NormalTok{        label}\OperatorTok{=}\StringTok{\textquotesingle{}C\_1= \textquotesingle{}} \OperatorTok{+} \BuiltInTok{str}\NormalTok{(i)}
+\NormalTok{    )}
+\NormalTok{    p7.append(p[}\DecValTok{0}\NormalTok{])}
+
+\NormalTok{p7.save(}\StringTok{\textquotesingle{}p7.pdf\textquotesingle{}}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{figure}
+\includegraphics[width=1\linewidth]{p7} \caption{\label{p7} $y = \sin(\frac{t^2}{2} + C_1)$}\label{fig:unnamed-chunk-17}
+\end{figure}
+
+\hypertarget{section-1}{%
+\section{3}\label{section-1}}
+
+Como es una ecuación de primer orden podemos hallar la solución con el
+factor integrante: \[
+  e^{\int 2t dt} = e^{t^2}
+\] Hace falta también la siguiente integral: \[
+  \int 2te^{t^2}
+\] cuyo valor es:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{inte }\OperatorTok{=}\NormalTok{ sym.Integral(}\DecValTok{2}\OperatorTok{*}\NormalTok{t}\OperatorTok{*}\NormalTok{sym.exp(t}\OperatorTok{**}\DecValTok{2}\NormalTok{),t)}
+\NormalTok{lp(sym.Eq(inte, inte.doit()))}
+\end{Highlighting}
+\end{Shaded}
+
+\[\int 2 t e^{t^{2}}\, dt = e^{t^{2}}\]
+
+La solución general es entonces: \[
+  y = \frac{e^{t^2} + C_1}{e^{t^2}} = 1 + C_1e^{-t^2}
+\]
+
+Para la solución particular sustituimos \(y(0) = 2\): \[
+  2 = 1+\frac{C_1}{e^0} \implies C_1 = 1
+\] Y obtenemos, finalmente: \[
+y = 1 + e^{-t^2},
+\] donde \(t\to\infty\) implica que \(y\to 1\).
+
+El gráfico de la solución esta en la figura \ref{p8}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{p8 }\OperatorTok{=}\NormalTok{ sym.plot(}\DecValTok{1} \OperatorTok{+}\NormalTok{ sym.exp(}\OperatorTok{{-}}\NormalTok{(t}\OperatorTok{**}\DecValTok{2}\NormalTok{)), (t,}\DecValTok{0}\NormalTok{,}\DecValTok{5}\NormalTok{), show}\OperatorTok{=}\VariableTok{False}\NormalTok{)}
+
+\NormalTok{p8.save(}\StringTok{\textquotesingle{}p8.pdf\textquotesingle{}}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{figure}
+\includegraphics[width=1\linewidth]{p8} \caption{\label{p8} $y = 1 + e^{-t^2}$}\label{fig:unnamed-chunk-20}
+\end{figure}
+
+Y el gráfico de la solución general en la figura \ref{p9}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{p9 }\OperatorTok{=}\NormalTok{ sym.plot(show}\OperatorTok{=}\VariableTok{False}\NormalTok{,legend}\OperatorTok{=}\VariableTok{True}\NormalTok{)}
+\ControlFlowTok{for}\NormalTok{ i }\KeywordTok{in} \BuiltInTok{range}\NormalTok{(}\OperatorTok{{-}}\DecValTok{5}\NormalTok{,}\DecValTok{6}\NormalTok{):}
+\NormalTok{    p }\OperatorTok{=}\NormalTok{ sym.plot(}
+        \DecValTok{1}\OperatorTok{+}\NormalTok{i}\OperatorTok{*}\NormalTok{sym.exp(}\OperatorTok{{-}}\NormalTok{(t}\OperatorTok{**}\DecValTok{2}\NormalTok{)),}
+\NormalTok{        (t,}\DecValTok{0}\NormalTok{,}\DecValTok{5}\NormalTok{),}
+\NormalTok{        show}\OperatorTok{=}\VariableTok{False}\NormalTok{,}
+\NormalTok{        label}\OperatorTok{=}\StringTok{\textquotesingle{}C\_1= \textquotesingle{}} \OperatorTok{+} \BuiltInTok{str}\NormalTok{(i)}
+\NormalTok{    )}
+\NormalTok{    p9.append(p[}\DecValTok{0}\NormalTok{])}
+
+\NormalTok{p9.save(}\StringTok{\textquotesingle{}p9.pdf\textquotesingle{}}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{figure}
+\includegraphics[width=1\linewidth]{p9} \caption{\label{p9} $y = \frac{e^{t^2} + C_1}{e^{t^2}} = 1 + C_1e^{-t^2}$}\label{fig:unnamed-chunk-22}
+\end{figure}
+
+Usaremos la librería \texttt{scypy} para resolver la ecuación de forma
+numérica:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ImportTok{from}\NormalTok{ sympy.plotting.plot }\ImportTok{import}\NormalTok{ List2DSeries}
+\KeywordTok{def}\NormalTok{ fun(t,y):}
+    \ControlFlowTok{return} \DecValTok{2}\OperatorTok{*}\NormalTok{t }\OperatorTok{{-}} \DecValTok{2}\OperatorTok{*}\NormalTok{t}\OperatorTok{*}\NormalTok{y}
+
+\NormalTok{sol }\OperatorTok{=}\NormalTok{ solve\_ivp(fun, (}\DecValTok{0}\NormalTok{,}\DecValTok{5}\NormalTok{), [}\DecValTok{2}\NormalTok{])}
+
+\NormalTok{p8.append(List2DSeries(sol.t,sol.y[}\DecValTok{0}\NormalTok{]))}
+\NormalTok{p8.save(}\StringTok{\textquotesingle{}p10.pdf\textquotesingle{}}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+El siguiente gráfico \ref{p10} compara la solución exacta (azul) con la
+solución numérica (verde).
+
+\begin{figure}
+\includegraphics[width=1\linewidth]{p10} \caption{\label{p10}}\label{fig:unnamed-chunk-24}
+\end{figure}
+
+La función \texttt{solve\_ivp} usa por defecto el método de Runge-Kutta
+de orden 5, directamente de la documentación:
+
+\begin{quote}
+Integration method to use:
+
+`RK45' (default): Explicit Runge-Kutta method of order 5(4) {[}1{]}. The
+error is controlled assuming accuracy of the fourth-order method, but
+steps are taken using the fifth-order accurate formula (local
+extrapolation is done). A quartic interpolation polynomial is used for
+the dense output \protect\hyperlink{section}{2}. Can be applied in the
+complex domain.
+\end{quote}
+
+En cuanto al error, la función \texttt{solve\_ivp} utiliza dos
+parámetros: \texttt{atol,rtol} que sol las tolerancias absolutas y
+relativas, respectivamente. Sus valores son \texttt{rtol=1e-3} y
+\texttt{atol=1e-6} y el error es siempre menor
+\texttt{atol\ +\ rtol\ *\ abs(y)}.
+
+\hypertarget{section-2}{%
+\section{4}\label{section-2}}
+
+De acuerdo con el método de euler mejorado, \[
+    y_1 = y_0 + \frac{h}{2} (f(t_0,y_0) + f(t_1, y_0 + hf(t_0,y_0))).
+\]
+
+Con \(h=0.1\) se tiene \(t_0 = 0\), \(t_1 = 0.1\) y \(y_0 = 1\). Además
+\(f(t_0,y_0)=0\). La solución es entonces: \[
+    y_1 = 1 + \frac{0.1}{2} f(0.1, 1),
+\] y al colocar esa expresión en la calculadora:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{def}\NormalTok{ f(t,y):}
+    \ControlFlowTok{return} \OperatorTok{{-}}\DecValTok{1} \OperatorTok{+} \DecValTok{2}\OperatorTok{*}\NormalTok{t }\OperatorTok{+}\NormalTok{ y}\OperatorTok{**}\DecValTok{2}\OperatorTok{/}\NormalTok{(}\DecValTok{1} \OperatorTok{+}\NormalTok{ t}\OperatorTok{**}\DecValTok{2}\NormalTok{)}\OperatorTok{**}\DecValTok{2}
+
+\BuiltInTok{print}\NormalTok{(}\DecValTok{1} \OperatorTok{+}\NormalTok{ (}\FloatTok{0.1}\OperatorTok{/}\DecValTok{2}\NormalTok{) }\OperatorTok{*}\NormalTok{ f(}\FloatTok{0.1}\NormalTok{, }\DecValTok{1}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 1.009014802470346
+\end{verbatim}
+
+mientras que la solución exacta es \(y(1) = 1 + 1^2 = 2\).
+
+Con \(h=0.025\) se tiene \(t_0 = 0\), \(t_1 = 0.025\) y \(y_0 = 1\).
+Además \(f(t_0,y_0)=0\). La solución es entonces: \[
+    y_1 = 1 + \frac{0.025}{2} f(0.025, 1),
+\] y al colocar esa expresión en la calculadora:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\BuiltInTok{print}\NormalTok{(}\DecValTok{1} \OperatorTok{+}\NormalTok{ (}\FloatTok{0.025}\OperatorTok{/}\DecValTok{2}\NormalTok{) }\OperatorTok{*}\NormalTok{ f(}\FloatTok{0.025}\NormalTok{, }\DecValTok{1}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 1.00060938963624
+\end{verbatim}
+
+mientras que la solución exacta es \(y(1) = 1 + 1^2 = 2\).
+
+\end{document}
